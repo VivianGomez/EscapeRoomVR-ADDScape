@@ -3628,6 +3628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448837177}
+  - component: {fileID: 448837178}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -3649,6 +3650,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448837178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448837176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd3cfcbf5a0ee544a655281b3f3fb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btns:
+  - {fileID: 292135772}
+  - {fileID: 2084283454}
+  - {fileID: 1480833107}
+  - {fileID: 1280178637}
+  ListaAleatoria: 
+  listaLlena: 0
+  turnoPC: 0
+  turnoUsuario: 0
+  contador: 0
+  contadorUsusario: 0
+  nivel: 0
+  Velocidad: 0.74
+  gameOver: {fileID: 0}
 --- !u!1 &450030915
 GameObject:
   m_ObjectHideFlags: 0

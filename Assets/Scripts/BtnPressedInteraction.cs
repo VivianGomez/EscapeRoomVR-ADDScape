@@ -23,7 +23,7 @@ public class BtnPressedInteraction : MonoBehaviour
         intensidadLuz = Luz.intensity; 
     }
 
-    void Activar(){
+    public void Activar(){
         desactivado = false;
         desactivando = false;
         Luz.intensity = intensidadLuz;
@@ -35,7 +35,7 @@ public class BtnPressedInteraction : MonoBehaviour
         Invoke("Desactivar", 0.1f);
     }
 
-    void Desactivar(){
+    public void Desactivar(){
         desactivando = true;
     }
 
