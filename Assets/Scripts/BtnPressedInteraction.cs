@@ -20,10 +20,10 @@ public class BtnPressedInteraction : MonoBehaviour
         intensidadLuz = Luz.intensity;
     }
 
-    IEnumerator animPlay()
+    IEnumerator AnimPlay()
     {
         anim.SetBool("press", true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         anim.SetBool("press", false);
     }
 
@@ -32,7 +32,7 @@ public class BtnPressedInteraction : MonoBehaviour
         desactivando = false;
         Luz.intensity = intensidadLuz;
         Luz.gameObject.SetActive(true);
-        StartCoroutine(animPlay());
+        StartCoroutine(AnimPlay());
 
         if (controlador.turnoUsuario)
         {
@@ -40,8 +40,7 @@ public class BtnPressedInteraction : MonoBehaviour
         }
 
         AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
-        Desactivar();
-
+        Invoke("Desactivar", 0.1f);
 
     }
 

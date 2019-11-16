@@ -24,13 +24,30 @@ public class ControladorJuego : MonoBehaviour
     public AudioClip correcto;
     public AudioClip nb;
 
+    public GameObject tUsuario;
+    public GameObject tPC;
 
+
+    void Update()
+    {
+        if (turnoUsuario)
+        {
+            tUsuario.SetActive(true);
+            tPC.SetActive(false);
+        }
+        else
+        {
+            tPC.SetActive(true);
+            tUsuario.SetActive(false);
+        }
+    }
 
     void Start()
     {
         LlenarListaAleatoria();
         turnoPC = true;
         turnoUsuario = false;
+        nivel = 0;
         Invoke("TurnoPC", 0.5f);
     }
 
@@ -57,15 +74,14 @@ public class ControladorJuego : MonoBehaviour
             {
                 contador++;
             }
+            Invoke("TurnoPC", 3.0f); //Velocidad
         }
-
-        Invoke("Velocidad", Velocidad);
-        
     }
 
     public void CambiarTurno()
     {
-        if(turnoPC)
+        AudioSource.PlayClipAtPoint(correcto, Vector3.zero, 1.0f);
+        if (turnoPC)
         {
             turnoPC = false;
             turnoUsuario = true;
@@ -76,7 +92,7 @@ public class ControladorJuego : MonoBehaviour
             turnoUsuario = false;
             contador = 0;
             contadorUsusario = 0;
-            TurnoPC();
+            Invoke("TurnoPC", 3.0f);
         }
     }
 
@@ -86,17 +102,17 @@ public class ControladorJuego : MonoBehaviour
         {
             print("GAME OVER");
             AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 1.0f);
+            //turnoUsuario = false;
+            //turnoPC = false;
             return;
         }
         if (contadorUsusario == contador)
         {
-            AudioSource.PlayClipAtPoint(correcto, Vector3.zero, 1.0f);
             print("Nivel actual" + nivel);
             CambiarTurno();
         }
         else
         {
-            AudioSource.PlayClipAtPoint(nb, Vector3.zero, 1.0f);
             contadorUsusario++;
         }
     }
