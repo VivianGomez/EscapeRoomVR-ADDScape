@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnID: 0
-  intensidadLuz: 0
+  intensidadLuz: 4
   Luz: {fileID: 1357343953}
   desactivando: 0
   desactivado: 0
@@ -7010,8 +7010,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 4.2496734
+  m_Intensity: 3
+  m_Range: 15.9
   m_SpotAngle: 11.624677
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -9369,8 +9369,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 4.2496734
+  m_Intensity: 3
+  m_Range: 15.9
   m_SpotAngle: 14.34962
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -9897,8 +9897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4e213fa8d7c349ba1d7dee96b156f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnID: 0
-  intensidadLuz: 0
+  btnID: 3
+  intensidadLuz: 4
   Luz: {fileID: 1128958009}
   desactivando: 0
   desactivado: 0
@@ -10889,8 +10889,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 4.2496734
+  m_Intensity: 3
+  m_Range: 15.9
   m_SpotAngle: 11.624677
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -12120,8 +12120,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 4.2496734
+  m_Intensity: 3
+  m_Range: 15.9
   m_SpotAngle: 10.8928
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -12464,8 +12464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4e213fa8d7c349ba1d7dee96b156f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnID: 0
-  intensidadLuz: 0
+  btnID: 2
+  intensidadLuz: 4
   Luz: {fileID: 1464925209}
   desactivando: 0
   desactivado: 0
@@ -16403,8 +16403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4e213fa8d7c349ba1d7dee96b156f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnID: 0
-  intensidadLuz: 0
+  btnID: 1
+  intensidadLuz: 4
   Luz: {fileID: 769466539}
   desactivando: 0
   desactivado: 0

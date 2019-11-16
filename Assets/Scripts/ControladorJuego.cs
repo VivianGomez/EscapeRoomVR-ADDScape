@@ -44,7 +44,7 @@ public class ControladorJuego : MonoBehaviour
             if (contador >= nivel)
             {
                 nivel++;
-                cambiarTurno();
+                CambiarTurno();
             }
             else
             {
@@ -56,7 +56,7 @@ public class ControladorJuego : MonoBehaviour
         
     }
 
-    public void cambiarTurno()
+    public void CambiarTurno()
     {
         if(turnoPC)
         {

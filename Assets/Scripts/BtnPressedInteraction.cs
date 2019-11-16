@@ -11,41 +11,39 @@ public class BtnPressedInteraction : MonoBehaviour
     public bool desactivando;
     public bool desactivado;
     public AudioClip sonido;
-    //public ControladorJuego controlador;
-
-    //Color baseColor;
-    //Renderer renderer_;
-    //Material mat;
-    //float emission;
+    public ControladorJuego controlador;
 
     void Start()
     {
-        intensidadLuz = Luz.intensity; 
+        intensidadLuz = Luz.intensity;
     }
 
-    public void Activar(){
+    public void Activar() {
         desactivado = false;
         desactivando = false;
         Luz.intensity = intensidadLuz;
         Luz.gameObject.SetActive(true);
 
-        // controlador. 
+        /**if(controlador.turnoUsuario)
+        {
+            controlador.JuegaUsuario(btnID);
+        }*/
         AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
 
         Invoke("Desactivar", 0.1f);
     }
 
-    public void Desactivar(){
+    public void Desactivar() {
         desactivando = true;
     }
 
     void Update()
     {
-        if(desactivando && !desactivado){
+        if (desactivando && !desactivado) {
             Luz.intensity = Mathf.Lerp(Luz.intensity, 0, 0.065f);
         }
 
-        if(Luz.intensity <= 0.02)
+        if (Luz.intensity <= 0.02)
         {
             Luz.intensity = 0;
             desactivado = true;
@@ -55,6 +53,8 @@ public class BtnPressedInteraction : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         Activar();
-
     }
+
+    
+
 }
