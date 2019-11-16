@@ -2166,6 +2166,7 @@ MonoBehaviour:
   desactivando: 0
   desactivado: 0
   sonido: {fileID: 8300000, guid: cc79c3a644ca74143babc5b77f7164c6, type: 3}
+  controlador: {fileID: 0}
 --- !u!1 &314372319
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,8 +7011,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 15.9
+  m_Intensity: 1
+  m_Range: 44
   m_SpotAngle: 11.624677
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -9369,8 +9370,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 15.9
+  m_Intensity: 1
+  m_Range: 44
   m_SpotAngle: 14.34962
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -9903,6 +9904,7 @@ MonoBehaviour:
   desactivando: 0
   desactivado: 0
   sonido: {fileID: 8300000, guid: 866227f5d8ceb364caa1c749b2f108c0, type: 3}
+  controlador: {fileID: 0}
 --- !u!1 &1283695714
 GameObject:
   m_ObjectHideFlags: 0
@@ -10889,8 +10891,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 15.9
+  m_Intensity: 1
+  m_Range: 44
   m_SpotAngle: 11.624677
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -12120,8 +12122,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 15.9
+  m_Intensity: 1
+  m_Range: 44
   m_SpotAngle: 10.8928
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -12469,7 +12471,8 @@ MonoBehaviour:
   Luz: {fileID: 1464925209}
   desactivando: 0
   desactivado: 0
-  sonido: {fileID: 8300000, guid: c3d6d13b1dffce744a0f28db99488c27, type: 3}
+  sonido: {fileID: 8300000, guid: bdc796dcbc4826a4da0ada6206454ea5, type: 3}
+  controlador: {fileID: 0}
 --- !u!1 &1489561407
 GameObject:
   m_ObjectHideFlags: 0
@@ -16408,7 +16411,8 @@ MonoBehaviour:
   Luz: {fileID: 769466539}
   desactivando: 0
   desactivado: 0
-  sonido: {fileID: 8300000, guid: bdc796dcbc4826a4da0ada6206454ea5, type: 3}
+  sonido: {fileID: 8300000, guid: c3d6d13b1dffce744a0f28db99488c27, type: 3}
+  controlador: {fileID: 0}
 --- !u!1 &2089489029
 GameObject:
   m_ObjectHideFlags: 0

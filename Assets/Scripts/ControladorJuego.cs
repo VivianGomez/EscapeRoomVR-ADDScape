@@ -69,6 +69,25 @@ public class ControladorJuego : MonoBehaviour
             turnoUsuario = false;
             contador = 0;
             contadorUsusario = 0;
+            Invoke("TurnoPC", 1.2f);
         }
-    } 
+    }
+
+    public void JuegaUsuario(int idBtn)
+    {
+        if (idBtn != ListaAleatoria[contadorUsusario])
+        {
+            print("GAME OVER");
+            return;
+        }
+        if (contadorUsusario == contador)
+        {
+            print("Nivel actual" + nivel);
+            CambiarTurno();
+        }
+        else
+        {
+            contadorUsusario++;
+        }
+    }
 }
