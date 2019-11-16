@@ -12,10 +12,19 @@ public class BtnPressedInteraction : MonoBehaviour
     public bool desactivado;
     public AudioClip sonido;
     public ControladorJuego controlador;
+    public Animator anim;
+
 
     void Start()
     {
         intensidadLuz = Luz.intensity;
+    }
+
+    IEnumerator animPlay()
+    {
+        anim.SetBool("press", true);
+        yield return new WaitForSeconds(2);
+        anim.SetBool("press", false);
     }
 
     public void Activar() {
@@ -23,14 +32,17 @@ public class BtnPressedInteraction : MonoBehaviour
         desactivando = false;
         Luz.intensity = intensidadLuz;
         Luz.gameObject.SetActive(true);
+        StartCoroutine(animPlay());
 
-        /**if(controlador.turnoUsuario)
+        if (controlador.turnoUsuario)
         {
             controlador.JuegaUsuario(btnID);
-        }*/
-        AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
+        }
 
-        Invoke("Desactivar", 0.1f);
+        AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
+        Desactivar();
+
+
     }
 
     public void Desactivar() {

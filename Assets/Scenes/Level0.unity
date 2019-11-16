@@ -2165,8 +2165,9 @@ MonoBehaviour:
   Luz: {fileID: 1357343953}
   desactivando: 0
   desactivado: 0
-  sonido: {fileID: 8300000, guid: cc79c3a644ca74143babc5b77f7164c6, type: 3}
-  controlador: {fileID: 0}
+  sonido: {fileID: 8300000, guid: 7dc58cc66218cfc4cb70a7d5469f7f41, type: 3}
+  controlador: {fileID: 448837178}
+  anim: {fileID: 292135770}
 --- !u!1 &314372319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,6 +3678,9 @@ MonoBehaviour:
   nivel: 0
   Velocidad: 0.74
   gameOver: {fileID: 0}
+  incorrecto: {fileID: 8300000, guid: 9f6af06c66b143f4b8bb81335525a0ec, type: 3}
+  correcto: {fileID: 8300000, guid: 752be009f0c81334dad43de984bd603c, type: 3}
+  nb: {fileID: 8300000, guid: f797473d47f98e9409e6688db2ae4f60, type: 3}
 --- !u!1 &450030915
 GameObject:
   m_ObjectHideFlags: 0
@@ -9903,8 +9907,9 @@ MonoBehaviour:
   Luz: {fileID: 1128958009}
   desactivando: 0
   desactivado: 0
-  sonido: {fileID: 8300000, guid: 866227f5d8ceb364caa1c749b2f108c0, type: 3}
-  controlador: {fileID: 0}
+  sonido: {fileID: 8300000, guid: 87ae0a4e6c032584f8fc4fc7ff8ad55b, type: 3}
+  controlador: {fileID: 448837178}
+  anim: {fileID: 1280178633}
 --- !u!1 &1283695714
 GameObject:
   m_ObjectHideFlags: 0
@@ -12471,8 +12476,9 @@ MonoBehaviour:
   Luz: {fileID: 1464925209}
   desactivando: 0
   desactivado: 0
-  sonido: {fileID: 8300000, guid: bdc796dcbc4826a4da0ada6206454ea5, type: 3}
-  controlador: {fileID: 0}
+  sonido: {fileID: 8300000, guid: a2f1f24d6cf0ce14298975476fd03e97, type: 3}
+  controlador: {fileID: 448837178}
+  anim: {fileID: 1480833103}
 --- !u!1 &1489561407
 GameObject:
   m_ObjectHideFlags: 0
@@ -16411,8 +16417,9 @@ MonoBehaviour:
   Luz: {fileID: 769466539}
   desactivando: 0
   desactivado: 0
-  sonido: {fileID: 8300000, guid: c3d6d13b1dffce744a0f28db99488c27, type: 3}
-  controlador: {fileID: 0}
+  sonido: {fileID: 8300000, guid: b6e93613351f8cc4badb90f03813971c, type: 3}
+  controlador: {fileID: 448837178}
+  anim: {fileID: 2084283450}
 --- !u!1 &2089489029
 GameObject:
   m_ObjectHideFlags: 0

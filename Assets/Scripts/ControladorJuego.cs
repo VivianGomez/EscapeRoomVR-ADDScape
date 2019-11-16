@@ -20,10 +20,17 @@ public class ControladorJuego : MonoBehaviour
 
     public Text gameOver;
 
+    public AudioClip incorrecto;
+    public AudioClip correcto;
+    public AudioClip nb;
+
+
+
     void Start()
     {
         LlenarListaAleatoria();
         turnoPC = true;
+        turnoUsuario = false;
         Invoke("TurnoPC", 0.5f);
     }
 
@@ -69,7 +76,7 @@ public class ControladorJuego : MonoBehaviour
             turnoUsuario = false;
             contador = 0;
             contadorUsusario = 0;
-            Invoke("TurnoPC", 1.2f);
+            TurnoPC();
         }
     }
 
@@ -78,15 +85,18 @@ public class ControladorJuego : MonoBehaviour
         if (idBtn != ListaAleatoria[contadorUsusario])
         {
             print("GAME OVER");
+            AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 1.0f);
             return;
         }
         if (contadorUsusario == contador)
         {
+            AudioSource.PlayClipAtPoint(correcto, Vector3.zero, 1.0f);
             print("Nivel actual" + nivel);
             CambiarTurno();
         }
         else
         {
+            AudioSource.PlayClipAtPoint(nb, Vector3.zero, 1.0f);
             contadorUsusario++;
         }
     }
