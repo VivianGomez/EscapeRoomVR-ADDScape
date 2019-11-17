@@ -71,7 +71,7 @@ public class BtnPressedInteraction : MonoBehaviour
         }
     }
 
-    IEnumerator OnTriggerEnter(Collider col)
+    IEnumerator OnTriggerEnter()
     {
         if (!pTouched && (controlador.turnoUsuario))
         {

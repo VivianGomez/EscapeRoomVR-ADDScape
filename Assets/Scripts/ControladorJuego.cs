@@ -1,6 +1,7 @@
 ﻿using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class ControladorJuego : MonoBehaviour
 {
@@ -27,9 +28,27 @@ public class ControladorJuego : MonoBehaviour
     public GameObject tUsuario;
     public GameObject tPC;
 
+    public GameObject botones;
+    public GameObject btnJugar;
+
+    public Submision submision0;
+    public Submision submision1;
+    public Submision submision2;
+
+    public GameObject misionRequisitoJugar;
+
+    public bool completadaSonido = false;
+
+
     public bool jugable = true;
 
     void Update()
+    {
+        StartCoroutine(verificarRequisitoJugar());
+        verificarTurnoEsfera();
+    }
+
+    void verificarTurnoEsfera()
     {
         if (turnoUsuario)
         {
@@ -48,12 +67,27 @@ public class ControladorJuego : MonoBehaviour
         }
     }
 
-    void Start()
+    IEnumerator verificarRequisitoJugar()
     {
-        LlenarListaAleatoria();
-        turnoPC = true;
-        turnoUsuario = false;
-        Invoke("TurnoPC", 0.5f);
+        if((submision0.completada) && (submision1.completada) && (submision2.completada))
+        {
+            if (!completadaSonido)
+            {
+                completadaSonido = true;
+                AudioSource.PlayClipAtPoint(correcto, Vector3.zero, 1.0f);
+                yield return new WaitForSeconds(3);    
+                completadaSonido = false;    
+            }
+            misionRequisitoJugar.SetActive(false);
+            Invoke("BtnJugar", 2.0f);
+        }
+    }
+
+    void BtnJugar()
+    {
+        botones.SetActive(false);
+        btnJugar.SetActive(true);
+        submision0.completada = false;
     }
 
     void LlenarListaAleatoria()
@@ -110,10 +144,11 @@ public class ControladorJuego : MonoBehaviour
         if (idBtn != ListaAleatoria[contadorUsusario])
         {
             print("GAME OVER");
-            AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 1.0f);
+            AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 2.0f);
             turnoUsuario = false;
             turnoPC = false;
             jugable = false;
+            Invoke("BtnJugar", 2.0f);
             return;
         }
         if (contadorUsusario == contador)
@@ -127,16 +162,23 @@ public class ControladorJuego : MonoBehaviour
         }
     }
 
-    public void ReiniciarJuego()
+    public void Jugar()
     {
-        turnoPC = true;
-        turnoUsuario = false;
         jugable = true;
         contador = 0;
         contadorUsusario = 0;
         nivel = 0;
         ListaAleatoria.Clear();
         LlenarListaAleatoria();
-        Invoke("TurnoPC", 0.5f);
+        Invoke("MostrarElementosJugar", 2.0f);
+        Invoke("TurnoPC", 4.0f);
+    }
+
+    void MostrarElementosJugar()
+    {
+        botones.SetActive(true);
+        btnJugar.SetActive(false);
+        turnoPC = true;
+        turnoUsuario = false;
     }
 }
