@@ -14,10 +14,14 @@ public class BtnPressedInteraction : MonoBehaviour
     public ControladorJuego controlador;
     public Animator anim;
 
+    private bool pTouched = false;
+
+
 
     void Start()
     {
         intensidadLuz = Luz.intensity;
+        pTouched = false;
     }
 
     IEnumerator AnimPlay()
@@ -28,19 +32,25 @@ public class BtnPressedInteraction : MonoBehaviour
     }
 
     public void Activar() {
-        desactivado = false;
-        desactivando = false;
-        Luz.intensity = intensidadLuz;
-        Luz.gameObject.SetActive(true);
-        StartCoroutine(AnimPlay());
-
-        if (controlador.turnoUsuario)
+        
+        if(controlador.jugable)
         {
-            controlador.JuegaUsuario(btnID);
-        }
+            //print("btnID "+btnID);
+            desactivado = false;
+            desactivando = false;
+            Luz.intensity = intensidadLuz;
+            Luz.gameObject.SetActive(true);
+            StartCoroutine(AnimPlay());
 
-        AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
-        Invoke("Desactivar", 0.1f);
+            if (controlador.turnoUsuario)
+            {
+                print("mi turno ");
+                controlador.JuegaUsuario(btnID);
+            }
+
+            AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
+            Invoke("Desactivar", 0.1f);
+        }
 
     }
 
@@ -61,11 +71,25 @@ public class BtnPressedInteraction : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider col)
+    IEnumerator OnTriggerEnter(Collider col)
     {
-        Activar();
+        if (!pTouched && (controlador.turnoUsuario))
+        {
+            pTouched = true;
+            Activar();
+            yield return new WaitForSeconds(3);    
+            pTouched = false;    
+            print("Off "+ pTouched);
+        }
     }
 
+    /**
+    void OnMouseDown()
+    {
+        Activar();
+    }*/
+
+ 
     
 
 }
