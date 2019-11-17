@@ -37,15 +37,33 @@ public class ControladorJuego : MonoBehaviour
 
     public GameObject misionRequisitoJugar;
 
+    public GameObject premio;
+
     public bool completadaSonido = false;
 
-
     public bool jugable = true;
+
+
 
     void Update()
     {
         StartCoroutine(verificarRequisitoJugar());
         verificarTurnoEsfera();
+        if(nivel==5 && turnoPC)
+        {
+            ganaJuego();
+        }
+    }
+
+    void ganaJuego()
+    {
+        //AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 2.0f);
+        turnoUsuario = false;
+        turnoPC = false;
+        jugable = false;
+        btnJugar.SetActive(false);
+        botones.SetActive(false);
+        premio.SetActive(true);
     }
 
     void verificarTurnoEsfera()
@@ -103,7 +121,7 @@ public class ControladorJuego : MonoBehaviour
     {
         if (listaLlena && turnoPC)
         {
-            print("NIVEL "+ nivel +" entra, i= "+ contador + " === BTN " +ListaAleatoria[contador]);
+            //print("NIVEL "+ nivel +" entra, i= "+ contador + " === BTN " +ListaAleatoria[contador]);
 
             btns[ListaAleatoria[contador]].Activar();
             if (contador >= nivel)
@@ -143,7 +161,6 @@ public class ControladorJuego : MonoBehaviour
         print(" entra, j= "+ contadorUsusario + " === BTN " +ListaAleatoria[contador]);
         if (idBtn != ListaAleatoria[contadorUsusario])
         {
-            print("GAME OVER");
             AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 2.0f);
             turnoUsuario = false;
             turnoPC = false;
