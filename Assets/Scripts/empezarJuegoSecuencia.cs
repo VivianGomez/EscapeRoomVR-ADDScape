@@ -35,17 +35,17 @@ public class empezarJuegoSecuencia : MonoBehaviour
             controlador.Jugar();
     }
 
-    IEnumerator OnTriggerEnter()
+    void OnTriggerEnter()
     {
 
-        if (!pTouched)
+        /**if (!pTouched)
         {
-            pTouched = true;
+            pTouched = true;*/
             Activar();
-            yield return new WaitForSeconds(3);    
+        /**    yield return new WaitForSeconds(3);    
             pTouched = false;    
             print("Off "+ pTouched);
-        }
+        }*/
     }
 
 }

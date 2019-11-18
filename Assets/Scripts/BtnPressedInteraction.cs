@@ -77,7 +77,7 @@ public class BtnPressedInteraction : MonoBehaviour
         {
             pTouched = true;
             Activar();
-            yield return new WaitForSeconds(3);    
+            yield return new WaitForSeconds(2);    
             pTouched = false;    
             print("Off "+ pTouched);
         }

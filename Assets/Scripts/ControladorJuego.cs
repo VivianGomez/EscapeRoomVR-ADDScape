@@ -103,6 +103,7 @@ public class ControladorJuego : MonoBehaviour
 
     void BtnJugar()
     {
+        jugable = true;
         botones.SetActive(false);
         btnJugar.SetActive(true);
         submision0.completada = false;
@@ -182,6 +183,8 @@ public class ControladorJuego : MonoBehaviour
     public void Jugar()
     {
         jugable = true;
+        turnoUsuario = false;
+        turnoPC = true;
         contador = 0;
         contadorUsusario = 0;
         nivel = 0;
