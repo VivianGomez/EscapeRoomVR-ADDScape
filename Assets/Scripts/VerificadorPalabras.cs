@@ -25,12 +25,12 @@ public class VerificadorPalabras : MonoBehaviour
     public void Jugar()
     {
         char[] arr = palabra.ToCharArray(0, palabra.Length);
-
         for (int i = 0; i < arr.Length; i++)
         {
             bloques[i] = Instantiate(gOPrefab, new Vector3((xI += espacio), yI, zI), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
             //gOModelo.transform.localScale += new Vector3(3f, 3f, 3f);
             bloques[i].name = "" + arr[i];
+            bloques[i].AddComponent<VerificarCaracter>();
         }
     }
 
@@ -42,4 +42,6 @@ public class VerificadorPalabras : MonoBehaviour
             bloques.Add(gOPrefab);
         }
     }
+
+
 }
