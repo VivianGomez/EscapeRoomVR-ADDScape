@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 // Loads Sample Scenes
 public class StartMenu : MonoBehaviour
-{   
+{
     public OVROverlay overlay;
     public OVROverlay text;
     public OVRCameraRig vrRig;
@@ -41,7 +41,7 @@ public class StartMenu : MonoBehaviour
         yield return new WaitForSeconds(1f);
         // Load Scene and wait til complete
         AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
-        while(!asyncLoad.isDone)
+        while (!asyncLoad.isDone)
         {
             yield return null;
         }

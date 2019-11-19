@@ -725,6 +725,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40502138}
   m_Mesh: {fileID: 4300000, guid: 6ec0c875cb1c94e40afcad0a0161eb4e, type: 3}
+--- !u!1 &63508432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 0c7bd497493fc42dd99a9a6f1a4342cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2123355267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &63508433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63508432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1350398701172f6429cbab02ae71ea70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: Level2
+--- !u!65 &63508434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63508432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1697387, y: 2.3846388, z: 1.1577871}
+  m_Center: {x: -0.046290163, y: 1.192689, z: 0.6507614}
+--- !u!65 &63508435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63508432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1697387, y: 2.3846388, z: 1.1577871}
+  m_Center: {x: -0.046290163, y: 1.192689, z: 0.6507614}
 --- !u!1 &64312421
 GameObject:
   m_ObjectHideFlags: 0
@@ -16787,7 +16832,7 @@ PrefabInstance:
     - target: {fileID: 5023201902883975368, guid: 9f81ecdeb44ee4542a1f28c882398b59,
         type: 3}
       propertyPath: m_Name
-      value: key_red
+      value: key_blue
       objectReference: {fileID: 0}
     - target: {fileID: 5023201902883975368, guid: 9f81ecdeb44ee4542a1f28c882398b59,
         type: 3}
@@ -26569,7 +26614,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: 0c7bd497493fc42dd99a9a6f1a4342cd, type: 3}
       propertyPath: m_Name
-      value: doorframe_01
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0c7bd497493fc42dd99a9a6f1a4342cd, type: 3}
       propertyPath: m_LocalPosition.x
