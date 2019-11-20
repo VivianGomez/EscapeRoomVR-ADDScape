@@ -8,15 +8,37 @@ public class VerificadorPalabras : MonoBehaviour
 
     private List<GameObject> bloques;
     public GameObject gOPrefab;
-    public string palabra;
     public float xI;
     public float yI;
     public float zI;
     public float espacio = 0.3f;
 
+    public int completada = 0;
+    private string palabra;
+    public int palabraActual = 0;
+    public GeneradorPalabras generadorPalabras;
 
     void Start()
     {
+        empezarJuego();
+    }
+
+    void Update()
+    {
+        print(completada+" = "+palabra.Length);
+        if(completada == palabra.Length)
+        {
+            palabraActual++;
+            destruirBloquesPalAnterior();
+            empezarJuego();
+            Invoke("Jugar", 2.0f);
+        }
+    }
+
+    public void empezarJuego()
+    {
+        completada = 0;
+        palabra = generadorPalabras.CambiarPalabra(palabraActual);
         bloques = new List<GameObject>();
         LlenarGameObjectsVacios();
     }
@@ -43,5 +65,27 @@ public class VerificadorPalabras : MonoBehaviour
         }
     }
 
+    public void destruirBloquesPalAnterior()
+    {
+        for (int i = 0; i < palabra.Length; i++)
+        {
+            Destroy(bloques[i]);
+        }
+    }
 
+
+
+    public void verificarPalabraCompletada()
+    {       
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                if(bloques[i].gameObject.GetComponent<VerificarCaracter>()!=null)
+                {
+                    if(bloques[i].gameObject.GetComponent<VerificarCaracter>().completada)
+                    {
+                        completada++;
+                    }
+                }
+            }       
+    }
 }

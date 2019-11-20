@@ -10,6 +10,8 @@ public class VerificarCaracter : MonoBehaviour
     public GameObject prefabABCMonstruos;
     public GameObject prefabABCBloques;
 
+    private bool pTouched = false;
+
     private void Start()
     {
         correcto = Resources.Load<AudioClip>("Sonidos/positive-beeps");
@@ -17,23 +19,38 @@ public class VerificarCaracter : MonoBehaviour
         prefabABCMonstruos = (GameObject)Resources.Load("Prefabs/Alfabeto", typeof(GameObject));
     }
 
-    void OnTriggerEnter(Collider col)
+    IEnumerator OnTriggerEnter(Collider col)
     {
-        if (((col.name.ToLower()) == this.name) || (col.name == ("block-"+this.name)))
+        if (((col.name.ToLower()) == this.name) || (col.name == ("block-"+this.name)) && !completada)
         {
-            AudioSource.PlayClipAtPoint(correcto, Vector3.zero, 1.0f);
-            completada = true;
-            this.gameObject.GetComponent<Renderer>().material.color = Color.green;
-            CrearDuplicado(col.name);
+            if (!pTouched)
+            {
+                pTouched = true;
+                col.gameObject.transform.SetParent(this.transform);
+                caracterCorrecto(col.name);
+                yield return new WaitForSeconds(3);    
+                pTouched = false;    
+                print("Off "+ pTouched);
+            }
         }
         else
         {
             if(!(col.name== "CustomHandRight") || !(col.name == "CustomHandRight"))
             { 
+                completada = false;
                 AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 1.0f);
                 this.gameObject.GetComponent<Renderer>().material.color = Color.red;
             }
         }
+    }
+
+    void caracterCorrecto(string nombre)
+    {
+        AudioSource.PlayClipAtPoint(correcto, Vector3.zero, 1.0f);
+        completada = true;
+        this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+        CrearDuplicado(nombre);
+        GameObject.Find("Controlador").GetComponent<VerificadorPalabras>().completada++;
     }
 
     
@@ -43,7 +60,7 @@ public class VerificarCaracter : MonoBehaviour
         Vector3 Pos = prefabABCMonstruos.transform.Find(nombrePrefab).localPosition;
 
         //eulerAngles
-        print("OMG"+ Pos.x+ " Y "+ Pos.y+ " Z " + Pos.z);
+        //print("OMG"+ Pos.x+ " Y "+ Pos.y+ " Z " + Pos.z);
         GameObject alf = GameObject.Find("Alfabeto");
         GameObject hijo = new GameObject(nombrePrefab);
         hijo = Instantiate(GameObject.Find(nombrePrefab), Pos, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
