@@ -3,7 +3,23 @@ using UnityEngine;
 
 public class TransportadorNivel : MonoBehaviour
 {
-    public string levelToLoad;
+    //public string levelToLoad;
+    public Animator anim;
+
+    public IEnumerator AnimPlay()
+    {
+        anim.SetBool("cerrar", true);
+        yield return new WaitForSeconds(1);
+        //anim.SetBool("abrir", false);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        print(col.name);
+        StartCoroutine(AnimPlay());
+    }
+
+    /**
 
     public void LoadScene(string sceneName)
     {
@@ -27,4 +43,6 @@ public class TransportadorNivel : MonoBehaviour
     {
         LoadScene(levelToLoad);
     }
+
+    */
 }
