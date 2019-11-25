@@ -48,7 +48,6 @@ public class ControladorJuego : MonoBehaviour
     void Update()
     {
         StartCoroutine(verificarRequisitoJugar());
-        verificarTurnoEsfera();
         if(nivel==5 && turnoPC)
         {
             ganaJuego();
@@ -66,8 +65,9 @@ public class ControladorJuego : MonoBehaviour
         premio.SetActive(true);
     }
 
-    void verificarTurnoEsfera()
+    IEnumerator verificarTurnoEsfera()
     {
+        yield return new WaitForSeconds(1.5f);
         if (turnoUsuario)
         {
             tUsuario.SetActive(true);
@@ -145,7 +145,6 @@ public class ControladorJuego : MonoBehaviour
         {
             turnoPC = false;
             turnoUsuario = true;
-
         }
         else
         {
@@ -155,6 +154,8 @@ public class ControladorJuego : MonoBehaviour
             contadorUsusario = 0;
             Invoke("TurnoPC", 3.0f);
         }
+        StartCoroutine(verificarTurnoEsfera());
+
     }
 
     public void JuegaUsuario(int idBtn)
