@@ -9,6 +9,8 @@ public class TransportadorNivel : MonoBehaviour
     public GameObject puertaElevador;
     private bool pTouched = false;
     public AudioClip sonidoPing;
+    public GameObject Btnlevel1;
+    public GameObject Btnlevel2;
     public GameObject level1;
     public GameObject level2;
 
@@ -18,7 +20,7 @@ public class TransportadorNivel : MonoBehaviour
         anim.enabled = true;
         anim.SetBool("abrir", false);
         anim.SetBool("cerrar", false);
-        level2.SetActive(false);
+        Btnlevel2.SetActive(false);
     }
 
     IEnumerator OnTriggerEnter(Collider col)
@@ -29,11 +31,14 @@ public class TransportadorNivel : MonoBehaviour
             AudioClip sonido = Resources.Load<AudioClip>("Sonidos/elevator_movingup");
             MusicSource.PlayOneShot(sonido);
             anim.SetBool("cerrar", true);
-            yield return new WaitForSeconds(8);
-            MusicSource.Stop();
-            MusicSource.PlayOneShot(sonidoPing);
+            yield return new WaitForSeconds(2);
             level1.SetActive(false);
             level2.SetActive(true);
+            yield return new WaitForSeconds(6);
+            MusicSource.Stop();
+            MusicSource.PlayOneShot(sonidoPing);
+            Btnlevel1.SetActive(false);
+            Btnlevel2.SetActive(true);
             anim.SetBool("abrir", true);
             yield return new WaitForSeconds(2.1f);
             puertaElevador.SetActive(false);
