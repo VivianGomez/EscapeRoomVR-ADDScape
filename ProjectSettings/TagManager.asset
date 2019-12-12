@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - btn
+  - mano
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - amarillo
   - azul
   - ambiente
-  - 
+  - TV
   - 
   - 
   - 
