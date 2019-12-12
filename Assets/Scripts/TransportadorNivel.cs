@@ -13,6 +13,7 @@ public class TransportadorNivel : MonoBehaviour
     public GameObject Btnlevel2;
     public GameObject level1;
     public GameObject level2;
+    public Animator animPuertaCuarto;
 
     private void Start()
     {
@@ -42,15 +43,18 @@ public class TransportadorNivel : MonoBehaviour
             anim.SetBool("abrir", true);
             yield return new WaitForSeconds(2.1f);
             puertaElevador.SetActive(false);
+            animPuertaCuarto.SetBool("abrir", true);
         }
     }
 
-
+    /**
     void OnTriggerExit(Collider col)
     {
         MusicSource.Stop();
+        animPuertaCuarto.SetBool("cerrar", true);
+        animPuertaCuarto.SetBool("abrir", false);
     }
-
+     */
 
     /**
 

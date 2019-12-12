@@ -4613,7 +4613,7 @@ PrefabInstance:
     - target: {fileID: 2785632532932698100, guid: c977d2a96fac6614ab5026d21e956327,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c977d2a96fac6614ab5026d21e956327, type: 3}
@@ -8206,6 +8206,7 @@ MonoBehaviour:
   Btnlevel2: {fileID: 0}
   level1: {fileID: 0}
   level2: {fileID: 0}
+  animPuertaCuarto: {fileID: 0}
 --- !u!65 &603594717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26801,6 +26802,7 @@ MonoBehaviour:
   Btnlevel2: {fileID: 1084114020}
   level1: {fileID: 1751067013}
   level2: {fileID: 1371813724}
+  animPuertaCuarto: {fileID: 820366021}
 --- !u!65 &1751962182
 BoxCollider:
   m_ObjectHideFlags: 0

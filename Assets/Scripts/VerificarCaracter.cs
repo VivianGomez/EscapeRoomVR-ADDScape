@@ -35,8 +35,8 @@ public class VerificarCaracter : MonoBehaviour
         }
         else
         {
-            if(!(col.name== "CustomHandRight") || !(col.name == "CustomHandRight"))
-            { 
+            if (!(col.name == "CustomHandRight") || !(col.name == "CustomHandLeft") || !(col.name == "AvatarGrabberLeft") || !(col.name == "AvatarGrabberRight") || !(col.name == "LeftHandAnchor") || !(col.name == "RightHandAnchor") || !(col.name == "LeftControllerAnchor") || !(col.name == "RightControllerAnchor"))
+            {
                 completada = false;
                 AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 1.0f);
                 this.gameObject.GetComponent<Renderer>().material.color = Color.red;

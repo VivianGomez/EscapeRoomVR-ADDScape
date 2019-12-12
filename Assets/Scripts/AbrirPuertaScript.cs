@@ -20,7 +20,10 @@ public class AbrirPuertaScript : MonoBehaviour
             Destroy(col.gameObject);
         }
         else{
-            AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 1.0f);
+            if (!(col.name == "CustomHandRight") || !(col.name == "CustomHandLeft") || !(col.name == "AvatarGrabberLeft") || !(col.name == "AvatarGrabberRight") || !(col.name == "LeftHandAnchor") || !(col.name == "RightHandAnchor") || !(col.name == "LeftControllerAnchor") || !(col.name == "RightControllerAnchor"))
+            {
+                AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 1.0f);
+            }
         }
     }
 
