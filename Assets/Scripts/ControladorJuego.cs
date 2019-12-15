@@ -1,4 +1,6 @@
-﻿using UnityEngine.UI;
+﻿
+
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
@@ -46,6 +48,8 @@ public class ControladorJuego : MonoBehaviour
     bool ins6 = false;
     bool ins7 = false;
 
+    bool primeraVez = true;
+
     private SoundManager soundManager;
 
     void Awake()
@@ -64,7 +68,7 @@ public class ControladorJuego : MonoBehaviour
 
     void ganaJuego()
     {
-        //AudioSource.PlayClipAtPoint(incorrecto, Vector3.zero, 2.0f);
+        soundManager.PlaySound("Ins5L1");
         turnoUsuario = false;
         turnoPC = false;
         jugable = false;
@@ -121,12 +125,7 @@ public class ControladorJuego : MonoBehaviour
             StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins6L1", "6Ins", "", 0, 4, 0));
             ins6 = true;
         }
-        else if(!ins7)
-        {
-            soundManager.PlaySound("Ins7L1");
-            //StartCoroutine(soundManager.CambiarInstruccionPantalla("inst7", "7Ins", "", 0, 0, 0));
-            ins7 = true;
-        }
+
     }
 
     void LlenarListaAleatoria()
@@ -201,8 +200,37 @@ public class ControladorJuego : MonoBehaviour
         }
     }
 
-    public void Jugar()
-    {
+    public IEnumerator Jugar()
+    {       
+        if(primeraVez)
+        {
+            soundManager.PlaySound("Ins8L1");
+            yield return new WaitForSeconds(3);
+            tPC.SetActive(true);
+            tUsuario.SetActive(false);
+            soundManager.activarAnimacion("Ins8L1");
+
+            yield return new WaitForSeconds(11);
+            soundManager.PlaySound("Ins9L1");
+            yield return new WaitForSeconds(3);
+            tPC.SetActive(false);
+            tUsuario.SetActive(true);
+            soundManager.activarAnimacion("Ins9L1");
+            
+            primeraVez = false;
+            
+            yield return new WaitForSeconds(9);
+            soundManager.arrow.SetActive(false);
+            tPC.SetActive(false);
+            tUsuario.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0);
+            soundManager.PlaySound("Ins7L1");
+            StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins6L1", "7Ins", "", 0, 2, 0));
+        }
+
         jugable = true;
         turnoUsuario = false;
         turnoPC = true;
@@ -214,6 +242,7 @@ public class ControladorJuego : MonoBehaviour
         Invoke("MostrarElementosJugar", 2.0f);
         Invoke("TurnoPC", 4.0f);
     }
+
 
     void MostrarElementosJugar()
     {

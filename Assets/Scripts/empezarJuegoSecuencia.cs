@@ -32,20 +32,20 @@ public class empezarJuegoSecuencia : MonoBehaviour
             Luz.gameObject.SetActive(true);
             StartCoroutine(AnimPlay());
             AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
-            controlador.Jugar();
+            StartCoroutine(controlador.Jugar());
+            //controlador.Jugar();
     }
 
     void OnTriggerEnter()
     {
 
-        /**if (!pTouched)
+        if (!pTouched)
         {
-            pTouched = true;*/
+            pTouched = true;
             Activar();
-        /**    yield return new WaitForSeconds(3);    
+            //yield return new WaitForSeconds(3);    
             pTouched = false;    
-            print("Off "+ pTouched);
-        }*/
+        }
     }
 
 }
