@@ -43,7 +43,15 @@ public class ControladorJuego : MonoBehaviour
 
     public bool jugable = true;
 
+    bool ins6 = false;
+    bool ins7 = false;
 
+    private SoundManager soundManager;
+
+    void Awake()
+    {
+        soundManager = GameObject.FindObjectOfType<SoundManager>();
+    }  
 
     void Update()
     {
@@ -107,6 +115,18 @@ public class ControladorJuego : MonoBehaviour
         botones.SetActive(false);
         btnJugar.SetActive(true);
         submision0.completada = false;
+        if(!ins6)
+        {
+            soundManager.PlaySound("Ins6L1");
+            StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins6L1", "6Ins", "", 0, 4, 0));
+            ins6 = true;
+        }
+        else if(!ins7)
+        {
+            soundManager.PlaySound("Ins7L1");
+            //StartCoroutine(soundManager.CambiarInstruccionPantalla("inst7", "7Ins", "", 0, 0, 0));
+            ins7 = true;
+        }
     }
 
     void LlenarListaAleatoria()

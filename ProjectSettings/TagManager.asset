@@ -6,6 +6,7 @@ TagManager:
   tags:
   - btn
   - mano
+  - interactivo
   layers:
   - Default
   - TransparentFX
