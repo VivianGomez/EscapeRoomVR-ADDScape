@@ -5,9 +5,11 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioClip Ins1L1, Ins2L1, Ins3L1, 
-    Ins4L1, Ins5L1, Ins6L1, Ins7L1, Ins8L1, Ins9L1;
+    Ins4L1, Ins5L1, Ins6L1, Ins7L1, Ins8L1, Ins9L1, Ins1L2, Ins2L2, Ins3L2;
     static AudioSource audioSource; 
     public GameObject pantallaIns;
+    public GameObject pantallaIns2;
+
     public GameObject arrow;
     public Animator animArrow;
 
@@ -22,6 +24,10 @@ public class SoundManager : MonoBehaviour
         Ins7L1 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins7L1");
         Ins8L1 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins8L1");
         Ins9L1 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins9L1");
+
+        Ins1L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins1L2");
+        Ins2L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins2L2");
+        Ins3L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins3L2");
 
         arrow.SetActive(false);
         audioSource = GetComponent<AudioSource>();
@@ -43,6 +49,16 @@ public class SoundManager : MonoBehaviour
             yield return new WaitForSeconds(secsImagen2);
             pantallaIns.GetComponent<Renderer>().material.mainTexture = Resources.Load("RecursosTutoriales/"+ nombreInstruccion2) as Texture;
         }   
+    }
+
+    public IEnumerator CambiarInstruccionPantalla2(string nombreAnim,  int secsAnim, string nombreInstruccion, int secsImagen)
+    {
+        yield return new WaitForSeconds(secsAnim);
+        arrow.SetActive(true);
+        animArrow.Play(nombreAnim);
+               
+        yield return new WaitForSeconds(secsImagen);
+        pantallaIns2.GetComponent<Renderer>().material.mainTexture = Resources.Load("RecursosTutoriales/"+ nombreInstruccion) as Texture;
     }
 
     public void activarAnimacion(string nombreAnim)
@@ -78,6 +94,15 @@ public class SoundManager : MonoBehaviour
             break; 
         case "Ins9L1":
             audioSource.PlayOneShot(Ins9L1);
+            break; 
+        case "Ins1L2":
+            audioSource.PlayOneShot(Ins1L2);
+            break; 
+        case "Ins2L2":
+            audioSource.PlayOneShot(Ins2L2);
+            break; 
+        case "Ins3L2":
+            audioSource.PlayOneShot(Ins3L2);
             break; 
         }
     }

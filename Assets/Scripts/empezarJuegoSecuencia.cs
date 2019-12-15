@@ -33,7 +33,6 @@ public class empezarJuegoSecuencia : MonoBehaviour
             StartCoroutine(AnimPlay());
             AudioSource.PlayClipAtPoint(sonido, Vector3.zero, 1.0f);
             StartCoroutine(controlador.Jugar());
-            //controlador.Jugar();
     }
 
     void OnTriggerEnter()

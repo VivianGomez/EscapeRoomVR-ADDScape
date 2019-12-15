@@ -15,6 +15,13 @@ public class TransportadorNivel : MonoBehaviour
     public GameObject level2;
     public Animator animPuertaCuarto;
 
+    private SoundManager soundManager;
+
+    void Awake()
+    {
+        soundManager = GameObject.FindObjectOfType<SoundManager>();
+    }  
+
     private void Start()
     {
         pTouched = false;
@@ -44,6 +51,15 @@ public class TransportadorNivel : MonoBehaviour
             yield return new WaitForSeconds(2.1f);
             puertaElevador.SetActive(false);
             animPuertaCuarto.SetBool("abrir", true);
+            soundManager.PlaySound("Ins1L2");
+            StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins1L2", "Ins1L2", "", 0, 0, 0));
+            yield return new WaitForSeconds(13);
+            soundManager.PlaySound("Ins2L2");
+            StartCoroutine(soundManager.CambiarInstruccionPantalla2("Ins2L2", 0, "Ins2L2", 0));
+            yield return new WaitForSeconds(13);
+            soundManager.PlaySound("Ins3L2");
+            StartCoroutine(soundManager.CambiarInstruccionPantalla2("Ins3L2", 0, "Ins2L2", 0));
+            yield return new WaitForSeconds(13);
         }
     }
 

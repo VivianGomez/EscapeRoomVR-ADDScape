@@ -40,14 +40,14 @@ public class EmpezarJuegoPalabras : MonoBehaviour
     void OnTriggerEnter()
     {
 
-        /**if (!pTouched)
+        if (!pTouched)
         {
-            pTouched = true;*/
-        Activar();
-        /**    yield return new WaitForSeconds(3);    
+            pTouched = true;
+            Activar();
+            //yield return new WaitForSeconds(3);    
             pTouched = false;    
-            print("Off "+ pTouched);
-        }*/
+            //print("Off "+ pTouched);
+        }
     }
 
 }
