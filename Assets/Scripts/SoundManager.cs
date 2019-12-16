@@ -112,7 +112,6 @@ public class SoundManager : MonoBehaviour
             audioSource.PlayOneShot(Ins4L2);
             break;
         case "Ins5L2":
-            print("HELLO");
             audioSource.PlayOneShot(Ins5L2);
             break;
         case "Ins6L2":

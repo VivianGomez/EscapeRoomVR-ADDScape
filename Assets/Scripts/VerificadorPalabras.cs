@@ -54,10 +54,11 @@ public class VerificadorPalabras : MonoBehaviour
 
     public void Jugar()
     {
+        float xtemp = xI;
         char[] arr = palabra.ToCharArray(0, palabra.Length);
         for (int i = 0; i < arr.Length; i++)
         {
-            bloques[i] = Instantiate(gOPrefab, new Vector3((xI += espacio), yI, zI), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+            bloques[i] = Instantiate(gOPrefab, new Vector3((xtemp += espacio), yI, zI), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
             //gOModelo.transform.localScale += new Vector3(3f, 3f, 3f);
             bloques[i].name = "" + arr[i];
             bloques[i].AddComponent<VerificarCaracter>();
@@ -65,6 +66,10 @@ public class VerificadorPalabras : MonoBehaviour
         if(primeraVez)
         {
             StartCoroutine(comenzarInstruccionesPalabras());
+        }
+        else{
+            soundManager.PlaySound("Ins6L2");
+            StartCoroutine(soundManager.CambiarInstruccionPantalla2("Ins3L2", 0, palabra, 0));
         } 
     }
 
@@ -77,6 +82,8 @@ public class VerificadorPalabras : MonoBehaviour
         StartCoroutine(soundManager.CambiarInstruccionPantalla2("Ins5L2", 0, "animal", 0));
         yield return new WaitForSeconds(10);
         primeraVez = false;
+        yield return new WaitForSeconds(10);
+        soundManager.arrow.SetActive(false);
     }
 
 
