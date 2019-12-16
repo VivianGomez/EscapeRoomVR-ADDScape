@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioClip Ins1L1, Ins2L1, Ins3L1, 
-    Ins4L1, Ins5L1, Ins6L1, Ins7L1, Ins8L1, Ins9L1, Ins1L2, Ins2L2, Ins3L2;
+    Ins4L1, Ins5L1, Ins6L1, Ins7L1, Ins8L1, Ins9L1, Ins1L2, Ins2L2, Ins3L2, Ins4L2, Ins5L2, Ins6L2;
     static AudioSource audioSource; 
     public GameObject pantallaIns;
     public GameObject pantallaIns2;
@@ -28,6 +28,9 @@ public class SoundManager : MonoBehaviour
         Ins1L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins1L2");
         Ins2L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins2L2");
         Ins3L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins3L2");
+        Ins4L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins4L2");
+        Ins5L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins5L2");
+        Ins6L2 = Resources.Load<AudioClip>("Sonidos/instrucciones/Ins6L2");
 
         arrow.SetActive(false);
         audioSource = GetComponent<AudioSource>();
@@ -67,6 +70,7 @@ public class SoundManager : MonoBehaviour
     }
 
     public void PlaySound(string clip){
+        print(clip);
         switch(clip){
         case "Ins1L1":
             audioSource.PlayOneShot(Ins1L1);
@@ -104,6 +108,16 @@ public class SoundManager : MonoBehaviour
         case "Ins3L2":
             audioSource.PlayOneShot(Ins3L2);
             break; 
+        case "Ins4L2":
+            audioSource.PlayOneShot(Ins4L2);
+            break;
+        case "Ins5L2":
+            print("HELLO");
+            audioSource.PlayOneShot(Ins5L2);
+            break;
+        case "Ins6L2":
+            audioSource.PlayOneShot(Ins6L2);
+            break;
         }
     }
 }

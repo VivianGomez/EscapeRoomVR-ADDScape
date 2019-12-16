@@ -14,6 +14,13 @@ public class EmpezarJuegoPalabras : MonoBehaviour
 
     private bool pTouched = false;
 
+    private SoundManager soundManager;
+
+    void Awake()
+    {
+        soundManager = GameObject.FindObjectOfType<SoundManager>();
+    }
+
     void Start()
     {
         intensidadLuz = Luz.intensity;

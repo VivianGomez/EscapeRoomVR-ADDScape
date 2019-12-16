@@ -18,6 +18,14 @@ public class VerificadorPalabras : MonoBehaviour
     public int palabraActual = 0;
     public GeneradorPalabras generadorPalabras;
 
+    bool primeraVez = true;
+    private SoundManager soundManager;
+
+    void Awake()
+    {
+        soundManager = GameObject.FindObjectOfType<SoundManager>();
+    }
+
     void Start()
     {
         empezarJuego();
@@ -25,7 +33,7 @@ public class VerificadorPalabras : MonoBehaviour
 
     void Update()
     {
-        print(completada+" = "+palabra.Length);
+        //print(completada+" = "+palabra.Length);
         if(completada == palabra.Length)
         {
             palabraActual++;
@@ -54,6 +62,21 @@ public class VerificadorPalabras : MonoBehaviour
             bloques[i].name = "" + arr[i];
             bloques[i].AddComponent<VerificarCaracter>();
         }
+        if(primeraVez)
+        {
+            StartCoroutine(comenzarInstruccionesPalabras());
+        } 
+    }
+
+    IEnumerator comenzarInstruccionesPalabras()
+    {
+        soundManager.PlaySound("Ins4L2");
+        StartCoroutine(soundManager.CambiarInstruccionPantalla2("Ins3L2", 0, "animal", 0));
+        yield return new WaitForSeconds(18);
+        soundManager.PlaySound("Ins5L2");
+        StartCoroutine(soundManager.CambiarInstruccionPantalla2("Ins5L2", 0, "animal", 0));
+        yield return new WaitForSeconds(10);
+        primeraVez = false;
     }
 
 
