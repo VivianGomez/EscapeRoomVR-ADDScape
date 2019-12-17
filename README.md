@@ -18,7 +18,7 @@ It is important to note that it is for children / teens  from 13 to 17 years old
 
 ### Instructions
 
-#### If you have not Unity 2019.2.5f1 installed 
+#### * If you have not Unity 2019.2.5f1 installed 
 
 1. Install [Unity Hub](https://unity3d.com/es/get-unity/download)
 2. Search the Unity 2019.2.5f1 version
@@ -26,7 +26,7 @@ It is important to note that it is for children / teens  from 13 to 17 years old
 3. Select the build configurations with SDK and NDK
 ![Configs SDKNDK](https://raw.githubusercontent.com/VivianGomez/BottlesShooter-/master/Tutorial/installUnitySDKNDK.PNG)
 
-#### If you have Unity 2019.2.5f1 installed 
+#### * If you have Unity 2019.2.5f1 installed 
 
 1. Install Unity, you can pay or use the Personal version (https://store.unity.com/download?ref=personal)
 2. Install the Android SDK, or  the Android IDE (which includes the SDK). In this URL you can do it https://developer.android.com/studio
