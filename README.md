@@ -10,7 +10,7 @@ F
 ### Prerequisites
 
 - [Git Bash](https://git-scm.com/downloads)
-- [Unity](https://unity3d.com/es) (this project was developed using Unity.2019.1.8f1)
+- [Unity](https://unity3d.com/es) (this project was developed using Unity.2019.2.5f1)
 - [Android](https://developer.android.com/studio)
 
 ### Instructions
