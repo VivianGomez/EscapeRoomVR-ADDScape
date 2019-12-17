@@ -1,4 +1,4 @@
-# PSICO-tests
+# Escape Room VR: Psico - Games
 
 ### Description
 
