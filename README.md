@@ -1,4 +1,4 @@
-# Escape Room VR: Psico - Games
+# Escape Room VR: Psico - Games 🎮🎮
 
 ### Description
 
