@@ -2,9 +2,9 @@
 
 ### Description
 
-This is an application that seeks to help conduct psychological tests through games for children with attention problems. It seeks to determine the status and progress of each child, through a virtualization of traditional games, accompanied by a more fun component thanks to the immersive environment through VR and the use of the Escape Room video game style, as a motivator for children.
+This is an application that seeks to help conduct psychological tests through games for children with attention problems. It seeks to determine the status and progress of each child, through a virtualization of traditional games, accompanied by a more fun components. Thanks to the immersive environment (through VR) and the use of the "Escape Room" videogame type, as a motivator for children.
 
-It is important to note that it is for children / young people from 13 to 17 years old
+It is important to note that it is for children / teens  from 13 to 17 years old
 
 ## How to run
 
