@@ -2,7 +2,9 @@
 
 ### Description
 
-F
+This is an application that seeks to help conduct psychological tests through games for children with attention problems. It seeks to determine the status and progress of each child, through a virtualization of traditional games, accompanied by a more fun component thanks to the immersive environment through VR and the use of the Escape Room video game style, as a motivator for children.
+
+It is important to note that it is for children / young people from 13 to 17 years old
 
 ## How to run
 
@@ -10,10 +12,21 @@ F
 ### Prerequisites
 
 - [Git Bash](https://git-scm.com/downloads)
+- [Unity Hub](https://unity3d.com/es/get-unity/download)
 - [Unity](https://unity3d.com/es) (this project was developed using Unity.2019.2.5f1)
 - [Android](https://developer.android.com/studio)
 
 ### Instructions
+
+#### If you have not Unity 2019.2.5f1 installed 
+
+1. Install [Unity Hub](https://unity3d.com/es/get-unity/download)
+2. Search the Unity 2019.2.5f1 version
+![Search Unity](https://raw.githubusercontent.com/VivianGomez/BottlesShooter-/master/Tutorial/unityHubvers201925.PNG)
+3. Select the build configurations with SDK and NDK
+![Configs SDKNDK](https://raw.githubusercontent.com/VivianGomez/BottlesShooter-/master/Tutorial/installUnitySDKNDK.PNG)
+
+#### If you have Unity 2019.2.5f1 installed 
 
 1. Install Unity, you can pay or use the Personal version (https://store.unity.com/download?ref=personal)
 2. Install the Android SDK, or  the Android IDE (which includes the SDK). In this URL you can do it https://developer.android.com/studio
