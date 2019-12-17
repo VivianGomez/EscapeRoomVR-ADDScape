@@ -84,7 +84,33 @@ git clone  https://github.com/VivianGomez/BottlesShooter-
 
 **Note**: If you need more explanation about the VR and Oculus configuration, use this [official guide](https://developer.oculus.com/documentation/unity/latest/concepts/book-unity-gsg/)
 
-15. When you have the same configuration of the picture, you can click on Build and run, and wait that the app be executed on your conected device.
+16. When you have the same configuration of the picture and your Oculus Quest on Developer mode, you can click on Build and run, and wait that the app be executed on your conected device.
+
+
+### Oculus Quest Developer mode:
+
+To begin development locally for Oculus Quest, you must enable Developer Mode in the companion app. Before you can put your Oculus Quest in Developer Mode, you need to have created (or belong to) a developer organization on the Oculus Dashboard.
+
+To join an existing organization:
+
+1. You’ll need to request access to the existing organization from the admin.
+2. You’ll receive an email invite. Once accepted, you’ll be a member of the Organization.
+
+To create a new organization:
+
+1. Go to: https://dashboard.oculus.com/organizations/create/
+2. Fill in the appropriate information.
+
+Enable Developer Mode
+
+Then, to put your Oculus Quest in developer mode:
+
+   1. Open the Oculus app on your mobile phone.
+   2. In the Settings menu, select the Oculus Quest headset that you’re using for development.
+   3. Select More Settings.
+   4. Toggle Developer Mode on.
+   
+**Note**: If you need more explanation about the Oculus Quest Developer mode configuration, use this [official guide](https://developer.oculus.com/documentation/quest/latest/concepts/mobile-device-setup-quest/)
 
 
 
