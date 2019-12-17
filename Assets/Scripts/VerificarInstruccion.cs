@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CambiaInstruccionScript : MonoBehaviour
+public class VerificarInstruccion : MonoBehaviour
 {
-    bool ins3 = false;
+    public bool ins3 = false;
     private SoundManager soundManager;
+
+    public VerificarInstruccion submision1;
+    public VerificarInstruccion submision2;
 
     void Awake()
     {
@@ -14,7 +17,7 @@ public class CambiaInstruccionScript : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.name.StartsWith("submision") && !ins3) 
+        if ((col.tag.Equals("mano")) && !ins3 && ((!submision1.ins3) && (!submision2.ins3))) 
         {
             soundManager.PlaySound("Ins3L1");
             StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins3L1", "3Ins", "", 0, 2, 0));

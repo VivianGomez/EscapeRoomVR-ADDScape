@@ -70,7 +70,6 @@ public class SoundManager : MonoBehaviour
     }
 
     public void PlaySound(string clip){
-        print(clip);
         switch(clip){
         case "Ins1L1":
             audioSource.PlayOneShot(Ins1L1);
