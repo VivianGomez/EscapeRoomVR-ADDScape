@@ -125,6 +125,12 @@ public class ControladorJuego : MonoBehaviour
             StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins6L1", "6Ins", "", 0, 4, 0));
             ins6 = true;
         }
+        else if(!primeraVez)
+        {
+            soundManager.PlaySound("Ins7L1");
+            StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins6L1", "7Ins", "", 0, 2, 0));
+            soundManager.arrow.SetActive(false);
+        }
 
     }
 
@@ -201,8 +207,10 @@ public class ControladorJuego : MonoBehaviour
     }
 
     public IEnumerator Jugar()
-    {       
-        if(primeraVez)
+    {
+        jugable = true;
+
+        if (primeraVez)
         {
             soundManager.PlaySound("Ins8L1");
             yield return new WaitForSeconds(3);
@@ -224,14 +232,8 @@ public class ControladorJuego : MonoBehaviour
             tPC.SetActive(false);
             tUsuario.SetActive(false);
         }
-        else
-        {
-            yield return new WaitForSeconds(0);
-            soundManager.PlaySound("Ins7L1");
-            StartCoroutine(soundManager.CambiarInstruccionPantalla("Ins6L1", "7Ins", "", 0, 2, 0));
-        }
+       
 
-        jugable = true;
         turnoUsuario = false;
         turnoPC = true;
         contador = 0;

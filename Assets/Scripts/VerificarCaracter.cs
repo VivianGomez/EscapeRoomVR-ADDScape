@@ -21,7 +21,7 @@ public class VerificarCaracter : MonoBehaviour
 
     IEnumerator OnTriggerEnter(Collider col)
     {
-        if (((col.name.ToLower()) == this.name) || (col.name == ("block-"+this.name)) && !completada)
+        if (((col.name.ToLower()).StartsWith(this.name)) || (col.name == ("block-"+this.name)) && !completada)
         {
             if (!pTouched)
             {
@@ -53,10 +53,10 @@ public class VerificarCaracter : MonoBehaviour
         GameObject.Find("Controlador").GetComponent<VerificadorPalabras>().completada++;
     }
 
-    
+
     public void CrearDuplicado(string nombrePrefab)
     {
-        
+
         Vector3 Pos = prefabABCMonstruos.transform.Find(nombrePrefab).localPosition;
 
         //eulerAngles
@@ -64,6 +64,7 @@ public class VerificarCaracter : MonoBehaviour
         GameObject alf = GameObject.Find("Alfabeto");
         GameObject hijo = new GameObject(nombrePrefab);
         hijo = Instantiate(GameObject.Find(nombrePrefab), Pos, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+        hijo.transform.localScale = new Vector3(1, 1, 1);
         hijo.transform.SetParent(alf.transform);
         hijo.transform.localPosition = new Vector3(Pos.x, Pos.y, Pos.z);
     }
