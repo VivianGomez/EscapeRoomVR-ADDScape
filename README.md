@@ -9,7 +9,7 @@ It is important to note that it is for children / teens  from 13 to 17 years old
 
 ![](https://raw.githubusercontent.com/VivianGomez/BottlesShooter-/master/Tutorial/demo.png)
 
-[Ver video demo](https://youtu.be/xEVRvpQgswU)
+[Ver video demo](https://youtu.be/mbAbzxoia-Y)
 
 
 ## How to run
