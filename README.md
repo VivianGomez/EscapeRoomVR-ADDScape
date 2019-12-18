@@ -7,7 +7,7 @@ This is an application that seeks to help conduct psychological tests for childr
 It is important to note that it is for children / teens  from 13 to 17 years old
 
 
-![](https://raw.githubusercontent.com/VivianGomez/BottlesShooter-/master/Tutorial/demo.PNG)
+![](https://raw.githubusercontent.com/VivianGomez/BottlesShooter-/master/Tutorial/demo.png)
 
 [Ver video demo](https://youtu.be/xEVRvpQgswU)
 
